@@ -10,6 +10,7 @@ function App() {
     const getVideos = async () => {
       // Getting data from the database
       const snapshot = await db.collection("videos").get();
+      console.log("Here", snapshot);
       setVideos(snapshot.docs.map((doc) => doc.data()));
     };
 

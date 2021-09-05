@@ -13,8 +13,9 @@ const firebaseConfig = {
   measurementId: "G-GYBBN1PCHJ",
 };
 
+//FIXME: Firebase is exceding the number of requests
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 console.log(firebaseApp);
 const db = firebaseApp.firestore();
-
+console.log(db);
 export default db;
