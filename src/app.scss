@@ -1,0 +1,30 @@
+html {
+  scroll-snap-type: y mandatory;
+}
+
+.body {
+  box-sizing: border-box;
+}
+
+.app {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-image: linear-gradient(to bottom right, #00d2ff, #3a7bd5);
+
+  &__videos {
+    position: relative;
+    height: 90%;
+    overflow: scroll;
+    width: 80%;
+    max-width: 350px;
+    scroll-snap-type: y mandatory;
+    border-radius: 20px;
+    box-shadow: 10px 10px 25px 6px rgba(0, 0, 0, 0.3);
+
+    // Hiding scrollbar
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}

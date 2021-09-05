@@ -1,0 +1,21 @@
+.video-sidebar {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  color: white;
+
+  &__button {
+    padding: 15px 20px;
+    text-align: center;
+    transition: all 0.2s;
+
+    &:hover {
+      color: #00d2ff;
+      transform: scale(1.1);
+    }
+
+    p {
+      font-size: 0.8rem;
+    }
+  }
+}
