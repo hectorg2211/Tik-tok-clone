@@ -5,17 +5,17 @@ import "./app.scss";
 
 function App() {
   const [videos, setVideos] = useState([]);
+  // const [selectedVideo, setSelectedVideo] = useState(null);
 
   useEffect(() => {
     const getVideos = async () => {
       // Getting data from the database
       const snapshot = await db.collection("videos").get();
-      console.log("Here", snapshot);
       setVideos(snapshot.docs.map((doc) => doc.data()));
     };
 
     getVideos();
-  }, [videos]);
+  }, []);
 
   return (
     <div className="app">
@@ -23,6 +23,7 @@ function App() {
         {videos.map(
           ({ url, channel, description, song, likes, messages, shares }) => (
             <Video
+              key={url}
               url={url}
               channel={channel}
               song={song}
