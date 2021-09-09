@@ -5,7 +5,8 @@ import "./app.scss";
 
 function App() {
   const [videos, setVideos] = useState([]);
-  // const [selectedVideo, setSelectedVideo] = useState(null);
+  const [selectedVideo, setSelectedVideo] = useState(null);
+  const [prevSelectedVideo, setPrevSelectedVideo] = useState(null);
 
   useEffect(() => {
     const getVideos = async () => {
@@ -17,11 +18,21 @@ function App() {
     getVideos();
   }, []);
 
+  /* Function that executes when a video is clicked, it changes the
+  selected video and sets a previously played video */
+  const onVideoClick = (videoIndex) => {
+    setPrevSelectedVideo(selectedVideo);
+    setSelectedVideo(videoIndex);
+  };
+
   return (
     <div className="app">
       <div className="app__videos">
         {videos.map(
-          ({ url, channel, description, song, likes, messages, shares }) => (
+          (
+            { url, channel, description, song, likes, messages, shares },
+            index
+          ) => (
             <Video
               key={url}
               url={url}
@@ -31,6 +42,10 @@ function App() {
               messages={messages}
               description={description}
               shares={shares}
+              onVideoClick={onVideoClick}
+              index={index}
+              selectedVideo={selectedVideo}
+              prevSelectedVideo={prevSelectedVideo}
             />
           )
         )}

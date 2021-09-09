@@ -1,23 +1,43 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import VideoFooter from "../videoFooter/VideoFooter";
 import VideoSidebar from "../videoSidebar/VideoSidebar";
 import "./video.scss";
 
-function Video({ url, channel, description, song, likes, messages, shares }) {
+function Video({
+  url,
+  channel,
+  description,
+  song,
+  likes,
+  messages,
+  shares,
+  onVideoClick,
+  index,
+  selectedVideo,
+  prevSelectedVideo,
+}) {
   const videoRef = useRef(null);
   const [playing, setPlaying] = useState(false);
 
-  const onVideoClick = () => {
-    if (!playing) videoRef.current.play();
-    else videoRef.current.pause();
-    setPlaying(!playing);
-  };
+  // const onVideoClick = () => {
+  //   if (!playing) videoRef.current.play();
+  //   else videoRef.current.pause();
+  //   setPlaying(!playing);
+  // };
+
+  useEffect(() => {
+    if (index === selectedVideo) {
+      if (!playing) videoRef.current.play();
+    } else if (index === prevSelectedVideo) {
+      videoRef.current.pause();
+    }
+  });
 
   return (
     <div className="video">
       <video
         ref={videoRef}
-        onClick={onVideoClick}
+        onClick={() => onVideoClick(index)}
         className="video__player"
         loop
         src={url}
