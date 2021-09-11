@@ -1,5 +1,7 @@
 # Tik Tok React Clone
 
+[Tok Tok Live Site](https://tiktok-clone-hectorg2211.netlify.app/)
+
 ## How I worked on this project
 
 My goal was replicate some functionality of the famous tik tok app.
