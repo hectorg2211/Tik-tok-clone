@@ -6,7 +6,6 @@ import "./app.scss";
 function App() {
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
-  const [prevSelectedVideo, setPrevSelectedVideo] = useState(null);
 
   useEffect(() => {
     const getVideos = async () => {
@@ -20,7 +19,6 @@ function App() {
   /* Function that executes when a video is clicked, it changes the
   selected video and sets a previously played video */
   const onVideoClick = (videoIndex) => {
-    setPrevSelectedVideo(selectedVideo);
     setSelectedVideo(videoIndex);
   };
 
@@ -44,7 +42,6 @@ function App() {
               onVideoClick={onVideoClick}
               index={index}
               selectedVideo={selectedVideo}
-              prevSelectedVideo={prevSelectedVideo}
             />
           )
         )}

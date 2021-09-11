@@ -15,7 +15,6 @@ function Video({
   onVideoClick,
   index,
   selectedVideo,
-  prevSelectedVideo,
 }) {
   const videoRef = useRef(null);
   const [playing, setPlaying] = useState(false);
