@@ -14,7 +14,6 @@ function App() {
       const snapshot = await db.collection("videos").get();
       setVideos(snapshot.docs.map((doc) => doc.data()));
     };
-
     getVideos();
   }, []);
 
