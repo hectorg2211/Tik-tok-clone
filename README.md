@@ -1,6 +1,6 @@
 # Tik Tok React Clone
 
-[Tok Tok Live Site](https://tiktok-clone-hectorg2211.netlify.app/)
+[Tik Tok Live Site](https://tiktok-clone-hectorg2211.netlify.app/)
 
 ## How I worked on this project
 
