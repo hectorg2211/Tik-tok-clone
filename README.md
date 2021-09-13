@@ -1,6 +1,6 @@
 # Tik Tok React Clone
 
-[Tik Tok Live Site](https://tiktok-clone-hectorg2211.netlify.app/)
+[Tik Tok Clone - Live Site](https://tiktok-clone-hectorg2211.netlify.app/)
 
 ## How I worked on this project
 
@@ -12,7 +12,7 @@ My goal was replicate some functionality of the famous tik tok app.
 
 - Scroll through the inner screen that displays the videos
 - Each video van be liked an the number of likes increment
-- The video _snaps_ to the screeb giving it fluid look
+- The video _snaps_ to the screen giving it fluid look
 
 ## What I used to create this app
 
